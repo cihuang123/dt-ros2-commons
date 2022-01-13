@@ -1,4 +1,4 @@
-# Talker-Listener Eaxmple
+# Talker_Listener Example
 In this example, we use `ros1_bridge` package to bridge messages between ROS1 and ROS2.
 
 ### Terminal 1
