@@ -1,4 +1,4 @@
-# ROS2 Topics communication Example
+# ROS2 Topics Communication Example
 In this example, we use ROS2 built-in package, `turtlesim`,  to show how ROS2 communicate via **topics** at local machine.
 
 ![turtlesim_node](pictures/turtlesim_node.png)
