@@ -71,5 +71,5 @@ docker run \
     --privileged \
     --security-opt seccomp=unconfined \
     $DOCKER_OPTS \
-    argnctu/ros2:demo \
+    argnctu/ros2:amd64 \
     $BASH_OPTION

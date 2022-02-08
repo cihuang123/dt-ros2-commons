@@ -12,7 +12,7 @@ fi
 
 BASH_OPTION=bash
 
-IMG=argnctu/ros2:demo
+IMG=argnctu/ros2:amd64
 
 xhost +
 containerid=$(docker ps -aqf "ancestor=${IMG}") && echo $containerid
