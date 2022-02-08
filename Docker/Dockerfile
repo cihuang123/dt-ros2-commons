@@ -1,4 +1,4 @@
-FROM amd64/ros:dashing-ros1-bridge-bionic
+FROM amd64/ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
@@ -35,6 +35,7 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     vim \
     gedit \
     wget \
+    curl \
     sudo \
     lsb-release \
     build-essential \
@@ -56,6 +57,47 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     python3-empy  \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+###################################### ROS #####################################
+
+RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+# install bootstrap tools
+RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
+    ros-$ROS_DISTRO-desktop-full \
+    python-rosdep \
+    python-rosinstall \
+    python-rosinstall-generator \
+    python-wstool \
+    && rm -rf /var/lib/apt/lists/*
+
+###################################### ROS2 #####################################
+
+RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
+    ros-$ROS2_DISTRO-desktop \
+    ros-$ROS2_DISTRO-ros1-bridge \
+    python3-colcon-common-extensions
+
+RUN rosdep init \
+    && rosdep update
+
+##################################### PIP ######################################
+
+RUN pip3 install --upgrade pip setuptools
+
+RUN pip3 install -U\
+    rospkg \
+    catkin-tools \
+    matplotlib \
+    pandas \
+    gdown \
+    argcomplete
 
 ##################################### setting ###################################################
 RUN chown -R ${USER}:${USER} ${HOME}/
