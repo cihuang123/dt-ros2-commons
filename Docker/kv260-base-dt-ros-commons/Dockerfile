@@ -3,7 +3,7 @@ FROM duckietown/dt-ros-commons:daffy-arm64v8
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-ENV ROS2_DISTRO dashing
+ENV ROS2_DISTRO foxy
 
 ###################################### user #####################################
 
@@ -46,7 +46,6 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     libcanberra-gtk3-module \
     libpcap-dev \
     libpython3-dev \
-    python-gtk2 \
     python-gobject \
     python-tk \
     python3-pip \
@@ -66,6 +65,7 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/r
 RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
     ros-$ROS2_DISTRO-desktop \
     ros-$ROS2_DISTRO-ros1-bridge \
+    python3-rosdep \
     python3-colcon-common-extensions
 
 RUN rosdep init \
