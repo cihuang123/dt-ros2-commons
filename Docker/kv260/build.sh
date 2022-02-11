@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build --rm -t argnctu/ros2:arm64 .
+docker build --rm -t argnctu/dt-ros2-commons:arm64 .
