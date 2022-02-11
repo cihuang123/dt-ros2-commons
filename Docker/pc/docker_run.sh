@@ -59,12 +59,12 @@ docker run \
     -e ROS_MASTER_URI=$ROS_MASTER_URI \
     -e ROS_IP=$ROS_IP \
     -v "$XAUTH:$XAUTH" \
-    -v "/home/$USER/ros1-ros2-demo:/home/argnctu/ros1-ros2-demo" \
+    -v "/home/$USER/dt-ros2-commons:/home/argnctu/dt-ros2-commons" \
     -v "/tmp/.X11-unix:/tmp/.X11-unix" \
     -v "/etc/localtime:/etc/localtime:ro" \
     -v "/dev:/dev" \
     -v "/var/run/docker.sock:/var/run/docker.sock" \
-    --workdir "/home/argnctu/ros1-ros2-demo" \
+    --workdir "/home/argnctu/dt-ros2-commons" \
     --user root \
     --name argnctu \
     --network host \
