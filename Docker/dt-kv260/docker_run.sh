@@ -57,5 +57,5 @@ docker run \
     --privileged \
     --security-opt seccomp=unconfined \
     $DOCKER_OPTS \
-    argnctu/dt-ros2-commons:arm64-base-dt-ros-commons \
+    argnctu/dt-ros2-commons:daffy-arm64v8 \
     $BASH_OPTION
