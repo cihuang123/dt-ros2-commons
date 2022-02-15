@@ -1,10 +1,10 @@
-FROM arm64v8/ubuntu:18.04
+FROM arm64v8/ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-ENV ROS_DISTRO melodic
-ENV ROS2_DISTRO dashing
+ENV ROS_DISTRO noetic
+ENV ROS2_DISTRO foxy
 
 ###################################### user #####################################
 
@@ -47,7 +47,6 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     libcanberra-gtk3-module \
     libpcap-dev \
     libpython3-dev \
-    python-gtk2 \
     python-gobject \
     python-tk \
     python3-pip \
@@ -67,10 +66,10 @@ RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E
 # install bootstrap tools
 RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
     ros-$ROS_DISTRO-desktop-full \
-    python-rosdep \
-    python-rosinstall \
-    python-rosinstall-generator \
-    python-wstool \
+    python3-rosdep \
+    python3-rosinstall \
+    python3-rosinstall-generator \
+    python3-wstool \
     && rm -rf /var/lib/apt/lists/*
 
 ###################################### ROS2 #####################################
