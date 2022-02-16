@@ -24,7 +24,7 @@ $ ssh remote-user@server-ip
 
 ------
 
-## SSH key for github
+## SSH key for Github
 
 You can follow the steps below to set up ssh keys for Github.
 
@@ -41,13 +41,13 @@ Show the key and copy it for later use.
 $ cat ~/.ssh/id_ed25519.pub
 ssh-ed25519 ........ your_email@example.com
 ```
-Log in your Github account and select settings
+Log in your Github account and select settings.\
 ![](https://i.imgur.com/NddBUYg.png)
 
-See left column and select SSH and GPG keys → New SSH key
+See left column and select SSH and GPG keys → New SSH key\
 ![](https://i.imgur.com/heWiCrV.png)
 
-Finally, copy your key in the bloew and set your name of key.
+Finally, copy your key in the bloew and set your name of key.\
 ![](https://i.imgur.com/3VUGFkC.png)
 
 ### 3. Make sure ssh key work
