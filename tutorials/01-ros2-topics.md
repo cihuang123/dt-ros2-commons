@@ -1,12 +1,14 @@
 # ROS2 Topics Communication Example
-In this example, we use ROS2 built-in package, `turtlesim`,  to show how ROS2 communicate via **topics** at local machine.
+In this example, we use the ROS2 built-in package, `turtlesim`, to demonstrate how ROS2 communicates via **topics** on Laptop.
+
+![ros2_topics](pictures/ros2_topics.png)
 
 ![turtlesim_node](pictures/turtlesim_node.png)
 
 ### Terminal 1
 Run turtlesim node.
 ```
-Laptop $ source docker_run.sh
+Laptop $ source pc_run.sh
 
 Docker $ source ros2_environment.sh
 Docker $ ros2 run turtlesim turtlesim_node
@@ -15,7 +17,7 @@ Docker $ ros2 run turtlesim turtlesim_node
 ### Terminal 2
 Run turtlesim teleop control.
 ```
-Laptop $ source docker_join.sh
+Laptop $ source pc_join.sh
 
 Docker $ source ros2_environment.sh
 Docker $ ros2 run turtlesim turtle_teleop_key
