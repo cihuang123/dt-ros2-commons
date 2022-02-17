@@ -31,7 +31,7 @@ Docker $ ros2 run turtlesim turtlesim_node
 ### Terminal 1
 Set ROS_DOMAIN_ID and run turtlesim teleop control.
 ```
-Laptop $ source kv260_run.sh
+KV260 $ source kv260_run.sh
 
 Docker $ source ros2_environment.sh
 Docker $ export ROS_DOMAIN_ID=<your_domain_id>
