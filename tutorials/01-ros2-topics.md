@@ -1,9 +1,10 @@
 # ROS2 Topics Communication Example
-In this example, we use the ROS2 built-in package, `turtlesim`, to demonstrate how ROS2 communicates via **topics** on Laptop.
-
-![ros2_topics](pictures/ros2_topics.png)
+In this example, we use the ROS2 built-in package, `turtlesim`, to demonstrate how ROS2 communicates via **topics** on laptop.
 
 ![turtlesim_node](pictures/turtlesim_node.png)
+
+## ROS diagram
+![ros2_topics](pictures/ros2_topics.png)
 
 ### Terminal 1
 Run turtlesim node.
