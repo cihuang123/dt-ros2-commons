@@ -42,6 +42,7 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     dirmngr \
     gnupg2 \
     mercurial \
+    iputils-ping \
     libcanberra-gtk-module \
     libcanberra-gtk3-module \
     libpcap-dev \
