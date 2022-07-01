@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build --rm -t argnctu/dt-ros2-commons:rpi .
+docker build --rm -t argnctu/duckiepond:rpi-auto .

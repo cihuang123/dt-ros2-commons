@@ -11,6 +11,6 @@ export ROS_MASTER_URI=http://$IP:11311
 export ROS_IP=$IP
 
 # launch joy node
-roslaunch joy joy_node.launch
+roslaunch auto_joy joy_ndoe.launch
 
 exec "$@"

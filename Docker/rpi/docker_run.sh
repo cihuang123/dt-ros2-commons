@@ -42,5 +42,5 @@ docker run \
     --privileged \
     --security-opt seccomp=unconfined \
     --restart always \
-    argnctu/dt-ros2-commons:rpi \
+    argnctu/duckiepond:rpi-auto \
     $BASH_OPTION

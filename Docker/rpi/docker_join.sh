@@ -1,6 +1,6 @@
 BASH_OPTION=bash
 
-IMG=argnctu/dt-ros2-commons:rpi
+IMG=argnctu/duckiepond:rpi-auto
 
 xhost +
 containerid=$(docker ps -aqf "ancestor=${IMG}") && echo $containerid
