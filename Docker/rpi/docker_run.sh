@@ -26,6 +26,7 @@ BASH_OPTION=bash
 
 docker run \
     -it \
+    --rm \
     -e DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
     -e XAUTHORITY=$XAUTH \
@@ -41,6 +42,5 @@ docker run \
     --network host \
     --privileged \
     --security-opt seccomp=unconfined \
-    --restart always \
-    argnctu/duckiepond:rpi-auto \
+    argnctu/duckiepond:rpi-melodic \
     $BASH_OPTION
