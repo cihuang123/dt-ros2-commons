@@ -22,16 +22,6 @@ if [ ! -f $XAUTH ]; then
     exit 1
 fi
 
-if [ ! -z "$1" ]; then
-    ROS_MASTER_URI=http://$1:11311
-    echo "ROS_MASTER $1"
-fi
-
-if [ ! -z "$2" ]; then
-    ROS_IP=$2
-    echo "ROS_IP $2"
-fi
-
 BASH_OPTION=bash
 
 docker run \
@@ -40,8 +30,6 @@ docker run \
     -e DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
     -e XAUTHORITY=$XAUTH \
-    -e ROS_MASTER_URI=$ROS_MASTER_URI \
-    -e ROS_IP=$ROS_IP \
     -v "$XAUTH:$XAUTH" \
     -v "/home/$USER/dt-ros2-commons:/home/argnctu/dt-ros2-commons" \
     -v "/tmp/.X11-unix:/tmp/.X11-unix" \
@@ -54,5 +42,5 @@ docker run \
     --network host \
     --privileged \
     --security-opt seccomp=unconfined \
-    argnctu/dt-ros2-commons:amd64 \
+    argnctu/duckiepond:rpi-melodic \
     $BASH_OPTION
